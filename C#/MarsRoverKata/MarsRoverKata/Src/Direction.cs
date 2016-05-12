@@ -46,5 +46,34 @@ namespace MarsRoverKata.Src
         {
             return $"{_direction}";
         }
+
+        private class North : Direction
+        {
+            public North() : base('N')
+            {
+            }
+        }
+
+        private class East : Direction
+        {
+            public East() : base('E')
+            {
+            }
+        }
+
+        private class South : Direction
+        {
+            public South() : base('S')
+            {
+            }
+        }
+
+        private class West : Direction
+        {
+            public West() : base('W')
+            {
+            }
+        }
+
     }
 }
