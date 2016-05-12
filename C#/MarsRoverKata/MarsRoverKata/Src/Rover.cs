@@ -2,7 +2,7 @@
 {
     class Direction
     {
-        public char _direction;
+        private readonly char _direction;
 
         public Direction(char direction)
         {
@@ -47,7 +47,7 @@
     {
         private int _x = 0;
         private int _y = 0;
-        private readonly Direction _direction = new Direction('N');
+        private Direction _direction = new Direction('N');
 
         public string Move(string instructions = null)
         {
@@ -58,9 +58,9 @@
                     if (instruction == 'M')
                         MoveForward();
                     if (instruction == 'L')
-                        _direction._direction = _direction.RotateLeft();
+                        _direction = new Direction(_direction.RotateLeft());
                     if (instruction == 'R')
-                        _direction._direction = _direction.RotateRight();
+                        _direction = new Direction(_direction.RotateRight());
                 }
             }
 
