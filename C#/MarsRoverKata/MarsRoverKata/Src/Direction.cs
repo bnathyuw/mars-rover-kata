@@ -32,35 +32,17 @@ namespace MarsRoverKata.Src
 
             public override Direction RotateLeft()
             {
-                if (_direction == 'N')
-                    return Facing('W');
-                if (_direction == 'E')
-                    return Facing('N');
-                if (_direction == 'S')
-                    return Facing('E');
-                if (_direction == 'W')
-                    return Facing('S');
-
-                return Facing(char.MinValue);
+                return Facing('W');
             }
 
             public override Direction RotateRight()
             {
-                if (_direction == 'N')
-                    return Facing('E');
-                if (_direction == 'E')
-                    return Facing('S');
-                if (_direction == 'S')
-                    return Facing('W');
-                if (_direction == 'W')
-                    return Facing('N');
-
-                return Facing(char.MinValue);
+                return Facing('E');
             }
 
             public override string ToString()
             {
-                return $"{_direction}";
+                return "N";
             }
         }
 
@@ -72,35 +54,17 @@ namespace MarsRoverKata.Src
 
             public override Direction RotateLeft()
             {
-                if (_direction == 'N')
-                    return Facing('W');
-                if (_direction == 'E')
-                    return Facing('N');
-                if (_direction == 'S')
-                    return Facing('E');
-                if (_direction == 'W')
-                    return Facing('S');
-
-                return Facing(char.MinValue);
+                return Facing('N');
             }
 
             public override Direction RotateRight()
             {
-                if (_direction == 'N')
-                    return Facing('E');
-                if (_direction == 'E')
-                    return Facing('S');
-                if (_direction == 'S')
-                    return Facing('W');
-                if (_direction == 'W')
-                    return Facing('N');
-
-                return Facing(char.MinValue);
+                return Facing('S');
             }
 
             public override string ToString()
             {
-                return $"{_direction}";
+                return "E";
             }
         }
 
@@ -112,35 +76,17 @@ namespace MarsRoverKata.Src
 
             public override Direction RotateLeft()
             {
-                if (_direction == 'N')
-                    return Facing('W');
-                if (_direction == 'E')
-                    return Facing('N');
-                if (_direction == 'S')
-                    return Facing('E');
-                if (_direction == 'W')
-                    return Facing('S');
-
-                return Facing(char.MinValue);
+                return Facing('E');
             }
 
             public override Direction RotateRight()
             {
-                if (_direction == 'N')
-                    return Facing('E');
-                if (_direction == 'E')
-                    return Facing('S');
-                if (_direction == 'S')
-                    return Facing('W');
-                if (_direction == 'W')
-                    return Facing('N');
-
-                return Facing(char.MinValue);
+                return Facing('W');
             }
 
             public override string ToString()
             {
-                return $"{_direction}";
+                return "S";
             }
         }
 
@@ -152,37 +98,18 @@ namespace MarsRoverKata.Src
 
             public override Direction RotateLeft()
             {
-                if (_direction == 'N')
-                    return Facing('W');
-                if (_direction == 'E')
-                    return Facing('N');
-                if (_direction == 'S')
-                    return Facing('E');
-                if (_direction == 'W')
-                    return Facing('S');
-
-                return Facing(char.MinValue);
+                return Facing('S');
             }
 
             public override Direction RotateRight()
             {
-                if (_direction == 'N')
-                    return Facing('E');
-                if (_direction == 'E')
-                    return Facing('S');
-                if (_direction == 'S')
-                    return Facing('W');
-                if (_direction == 'W')
-                    return Facing('N');
-
-                return Facing(char.MinValue);
+                return Facing('N');
             }
 
             public override string ToString()
             {
-                return $"{_direction}";
+                return "W";
             }
         }
-
     }
 }
