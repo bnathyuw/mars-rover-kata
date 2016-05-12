@@ -1,10 +1,16 @@
+using System;
+
 namespace MarsRoverKata.Src
 {
     class Direction
     {
         public static Direction Facing(char direction)
         {
-            return new Direction(direction);
+            if (direction == 'N') return new North();
+            if (direction == 'E') return new East();
+            if (direction == 'S') return new South();
+            if (direction == 'W') return new West();
+            throw new NotImplementedException("Unknown compass point");
         }
 
         private readonly char _direction;
