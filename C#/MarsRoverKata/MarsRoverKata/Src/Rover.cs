@@ -31,6 +31,11 @@
 
             return char.MinValue;
         }
+
+        public override string ToString()
+        {
+            return $"{_direction}";
+        }
     }
 
     class Rover
@@ -54,7 +59,7 @@
                 }
             }
 
-            return $"{_x}{_y}{_direction._direction}";
+            return $"{_x}{_y}{_direction}";
         }
 
         private void MoveForward()
