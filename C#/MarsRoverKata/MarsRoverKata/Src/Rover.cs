@@ -1,30 +1,10 @@
 ﻿namespace MarsRoverKata.Src
 {
-    class Rover
+    class Direction
     {
-        private int _x = 0;
-        private int _y = 0;
-        private char _direction = 'N';
+        public char _direction = 'N';
 
-        public string Move(string instructions = null)
-        {
-            if (instructions != null)
-            {
-                foreach (var instruction in instructions)
-                {
-                    if (instruction == 'M')
-                        MoveForward();
-                    if (instruction == 'L')
-                        _direction = RotateLeft();
-                    if (instruction == 'R')
-                        _direction = RotateRight();
-                }
-            }
-
-            return $"{_x}{_y}{_direction}";
-        }
-
-        private char RotateLeft()
+        public char RotateLeft()
         {
             if(_direction == 'N')
                 return 'W';
@@ -38,7 +18,7 @@
             return char.MinValue;
         }
 
-        private char RotateRight()
+        public char RotateRight()
         {
             if (_direction == 'N')
                 return 'E';
@@ -50,6 +30,31 @@
                 return 'N';
 
             return char.MinValue;
+        }
+    }
+
+    class Rover
+    {
+        private int _x = 0;
+        private int _y = 0;
+        private readonly Direction _direction = new Direction();
+
+        public string Move(string instructions = null)
+        {
+            if (instructions != null)
+            {
+                foreach (var instruction in instructions)
+                {
+                    if (instruction == 'M')
+                        MoveForward();
+                    if (instruction == 'L')
+                        _direction._direction = _direction.RotateLeft();
+                    if (instruction == 'R')
+                        _direction._direction = _direction.RotateRight();
+                }
+            }
+
+            return $"{_x}{_y}{_direction._direction}";
         }
 
         private void MoveForward()
