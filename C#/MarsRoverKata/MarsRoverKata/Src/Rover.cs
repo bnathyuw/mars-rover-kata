@@ -9,7 +9,12 @@
             _direction = direction;
         }
 
-        public char Rl()
+        public Direction RotateLeft()
+        {
+            return new Direction(Rl());
+        }
+
+        private char Rl()
         {
             if(_direction == 'N')
                 return 'W';
@@ -23,7 +28,12 @@
             return char.MinValue;
         }
 
-        public char Rr()
+        public Direction RotateRight()
+        {
+            return new Direction(Rr());
+        }
+
+        private char Rr()
         {
             if (_direction == 'N')
                 return 'E';
@@ -58,23 +68,13 @@
                     if (instruction == 'M')
                         MoveForward();
                     if (instruction == 'L')
-                        _direction = RotateLeft(_direction);
+                        _direction = _direction.RotateLeft();
                     if (instruction == 'R')
-                        _direction = RotateRight(_direction);
+                        _direction = _direction.RotateRight();
                 }
             }
 
             return $"{_x}{_y}{_direction}";
-        }
-
-        private static Direction RotateLeft(Direction direction)
-        {
-            return new Direction(direction.Rl());
-        }
-
-        private static Direction RotateRight(Direction direction)
-        {
-            return new Direction(direction.Rr());
         }
 
         private void MoveForward()
