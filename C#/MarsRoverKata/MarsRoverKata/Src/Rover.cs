@@ -58,13 +58,23 @@
                     if (instruction == 'M')
                         MoveForward();
                     if (instruction == 'L')
-                        _direction = new Direction(_direction.RotateLeft());
+                        _direction = RotateLeft();
                     if (instruction == 'R')
-                        _direction = new Direction(_direction.RotateRight());
+                        _direction = RotateRight();
                 }
             }
 
             return $"{_x}{_y}{_direction}";
+        }
+
+        private Direction RotateLeft()
+        {
+            return new Direction(_direction.RotateLeft());
+        }
+
+        private Direction RotateRight()
+        {
+            return new Direction(_direction.RotateRight());
         }
 
         private void MoveForward()
