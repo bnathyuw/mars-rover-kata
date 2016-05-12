@@ -23,20 +23,6 @@
             return new Direction(char.MinValue);
         }
 
-        private char Rl()
-        {
-            if(_direction == 'N')
-                return 'W';
-            if(_direction == 'E')
-                return 'N';
-            if(_direction == 'S')
-                return 'E';
-            if(_direction == 'W')
-                return 'S';
-
-            return char.MinValue;
-        }
-
         public Direction RotateRight()
         {
             if (_direction == 'N')
@@ -49,20 +35,6 @@
                 return new Direction('N');
 
             return new Direction(char.MinValue);
-        }
-
-        private char Rr()
-        {
-            if (_direction == 'N')
-                return 'E';
-            if (_direction == 'E')
-                return 'S';
-            if (_direction == 'S')
-                return 'W';
-            if (_direction == 'W')
-                return 'N';
-
-            return char.MinValue;
         }
 
         public override string ToString()
