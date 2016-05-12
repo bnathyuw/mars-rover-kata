@@ -2,7 +2,7 @@ using System;
 
 namespace MarsRoverKata.Src
 {
-    class Direction
+    abstract class Direction
     {
         public static Direction Facing(char direction)
         {
@@ -10,53 +10,57 @@ namespace MarsRoverKata.Src
             if (direction == 'E') return new East();
             if (direction == 'S') return new South();
             if (direction == 'W') return new West();
-            throw new NotImplementedException("Unknown compass point");
+            throw new Exception("Unknown compass point");
         }
 
-        private readonly char _direction;
+        protected readonly char _direction;
 
         private Direction(char direction)
         {
             _direction = direction;
         }
 
-        public Direction RotateLeft()
-        {
-            if (_direction == 'N')
-                return Facing('W');
-            if (_direction == 'E')
-                return Facing('N');
-            if (_direction == 'S')
-                return Facing('E');
-            if (_direction == 'W')
-                return Facing('S');
+        public abstract Direction RotateLeft();
 
-            return Facing(char.MinValue);
-        }
-
-        public Direction RotateRight()
-        {
-            if (_direction == 'N')
-                return Facing('E');
-            if (_direction == 'E')
-                return Facing('S');
-            if (_direction == 'S')
-                return Facing('W');
-            if (_direction == 'W')
-                return Facing('N');
-
-            return Facing(char.MinValue);
-        }
-
-        public override string ToString()
-        {
-            return $"{_direction}";
-        }
+        public abstract Direction RotateRight();
 
         private class North : Direction
         {
             public North() : base('N')
             {
+            }
+
+            public override Direction RotateLeft()
+            {
+                if (_direction == 'N')
+                    return Facing('W');
+                if (_direction == 'E')
+                    return Facing('N');
+                if (_direction == 'S')
+                    return Facing('E');
+                if (_direction == 'W')
+                    return Facing('S');
+
+                return Facing(char.MinValue);
+            }
+
+            public override Direction RotateRight()
+            {
+                if (_direction == 'N')
+                    return Facing('E');
+                if (_direction == 'E')
+                    return Facing('S');
+                if (_direction == 'S')
+                    return Facing('W');
+                if (_direction == 'W')
+                    return Facing('N');
+
+                return Facing(char.MinValue);
+            }
+
+            public override string ToString()
+            {
+                return $"{_direction}";
             }
         }
 
@@ -65,6 +69,39 @@ namespace MarsRoverKata.Src
             public East() : base('E')
             {
             }
+
+            public override Direction RotateLeft()
+            {
+                if (_direction == 'N')
+                    return Facing('W');
+                if (_direction == 'E')
+                    return Facing('N');
+                if (_direction == 'S')
+                    return Facing('E');
+                if (_direction == 'W')
+                    return Facing('S');
+
+                return Facing(char.MinValue);
+            }
+
+            public override Direction RotateRight()
+            {
+                if (_direction == 'N')
+                    return Facing('E');
+                if (_direction == 'E')
+                    return Facing('S');
+                if (_direction == 'S')
+                    return Facing('W');
+                if (_direction == 'W')
+                    return Facing('N');
+
+                return Facing(char.MinValue);
+            }
+
+            public override string ToString()
+            {
+                return $"{_direction}";
+            }
         }
 
         private class South : Direction
@@ -72,12 +109,78 @@ namespace MarsRoverKata.Src
             public South() : base('S')
             {
             }
+
+            public override Direction RotateLeft()
+            {
+                if (_direction == 'N')
+                    return Facing('W');
+                if (_direction == 'E')
+                    return Facing('N');
+                if (_direction == 'S')
+                    return Facing('E');
+                if (_direction == 'W')
+                    return Facing('S');
+
+                return Facing(char.MinValue);
+            }
+
+            public override Direction RotateRight()
+            {
+                if (_direction == 'N')
+                    return Facing('E');
+                if (_direction == 'E')
+                    return Facing('S');
+                if (_direction == 'S')
+                    return Facing('W');
+                if (_direction == 'W')
+                    return Facing('N');
+
+                return Facing(char.MinValue);
+            }
+
+            public override string ToString()
+            {
+                return $"{_direction}";
+            }
         }
 
         private class West : Direction
         {
             public West() : base('W')
             {
+            }
+
+            public override Direction RotateLeft()
+            {
+                if (_direction == 'N')
+                    return Facing('W');
+                if (_direction == 'E')
+                    return Facing('N');
+                if (_direction == 'S')
+                    return Facing('E');
+                if (_direction == 'W')
+                    return Facing('S');
+
+                return Facing(char.MinValue);
+            }
+
+            public override Direction RotateRight()
+            {
+                if (_direction == 'N')
+                    return Facing('E');
+                if (_direction == 'E')
+                    return Facing('S');
+                if (_direction == 'S')
+                    return Facing('W');
+                if (_direction == 'W')
+                    return Facing('N');
+
+                return Facing(char.MinValue);
+            }
+
+            public override string ToString()
+            {
+                return $"{_direction}";
             }
         }
 
