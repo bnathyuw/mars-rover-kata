@@ -15,16 +15,16 @@
                     if (instruction == 'M')
                         MoveForward();
                     if (instruction == 'L')
-                        _direction = RotateLeft(_direction);
+                        _direction = RotateLeft();
                     if (instruction == 'R')
-                        _direction = RotateRight(_direction);
+                        _direction = RotateRight();
                 }
             }
 
             return $"{_x}{_y}{_direction}";
         }
 
-        private char RotateLeft(char direction)
+        private char RotateLeft()
         {
             if(_direction == 'N')
                 return 'W';
@@ -38,7 +38,7 @@
             return char.MinValue;
         }
 
-        private char RotateRight(char direction)
+        private char RotateRight()
         {
             if (_direction == 'N')
                 return 'E';
