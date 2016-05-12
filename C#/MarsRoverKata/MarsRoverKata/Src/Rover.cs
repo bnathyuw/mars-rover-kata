@@ -11,7 +11,16 @@
 
         public Direction RotateLeft()
         {
-            return new Direction(Rl());
+            if (_direction == 'N')
+                return new Direction('W');
+            if (_direction == 'E')
+                return new Direction('N');
+            if (_direction == 'S')
+                return new Direction('E');
+            if (_direction == 'W')
+                return new Direction('S');
+
+            return new Direction(char.MinValue);
         }
 
         private char Rl()
@@ -30,7 +39,16 @@
 
         public Direction RotateRight()
         {
-            return new Direction(Rr());
+            if (_direction == 'N')
+                return new Direction('E');
+            if (_direction == 'E')
+                return new Direction('S');
+            if (_direction == 'S')
+                return new Direction('W');
+            if (_direction == 'W')
+                return new Direction('N');
+
+            return new Direction(char.MinValue);
         }
 
         private char Rr()
