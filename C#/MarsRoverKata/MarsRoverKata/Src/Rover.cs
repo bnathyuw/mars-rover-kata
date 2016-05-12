@@ -2,7 +2,12 @@
 {
     class Direction
     {
-        public char _direction = 'N';
+        public char _direction;
+
+        public Direction(char direction)
+        {
+            _direction = direction;
+        }
 
         public char RotateLeft()
         {
@@ -42,7 +47,7 @@
     {
         private int _x = 0;
         private int _y = 0;
-        private readonly Direction _direction = new Direction();
+        private readonly Direction _direction = new Direction('N');
 
         public string Move(string instructions = null)
         {
