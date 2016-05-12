@@ -13,11 +13,8 @@ namespace MarsRoverKata.Src
             throw new Exception("Unknown compass point");
         }
 
-        protected readonly char _direction;
-
-        private Direction(char direction)
+        private Direction()
         {
-            _direction = direction;
         }
 
         public abstract Direction RotateLeft();
@@ -26,10 +23,6 @@ namespace MarsRoverKata.Src
 
         private class North : Direction
         {
-            public North() : base('N')
-            {
-            }
-
             public override Direction RotateLeft()
             {
                 return Facing('W');
@@ -48,10 +41,6 @@ namespace MarsRoverKata.Src
 
         private class East : Direction
         {
-            public East() : base('E')
-            {
-            }
-
             public override Direction RotateLeft()
             {
                 return Facing('N');
@@ -70,10 +59,6 @@ namespace MarsRoverKata.Src
 
         private class South : Direction
         {
-            public South() : base('S')
-            {
-            }
-
             public override Direction RotateLeft()
             {
                 return Facing('E');
@@ -92,10 +77,6 @@ namespace MarsRoverKata.Src
 
         private class West : Direction
         {
-            public West() : base('W')
-            {
-            }
-
             public override Direction RotateLeft()
             {
                 return Facing('S');
