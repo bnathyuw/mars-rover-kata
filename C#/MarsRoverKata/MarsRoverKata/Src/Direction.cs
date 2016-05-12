@@ -2,9 +2,14 @@ namespace MarsRoverKata.Src
 {
     class Direction
     {
+        public static Direction Facing(char direction)
+        {
+            return new Direction(direction);
+        }
+
         private readonly char _direction;
 
-        public Direction(char direction)
+        private Direction(char direction)
         {
             _direction = direction;
         }
@@ -12,29 +17,29 @@ namespace MarsRoverKata.Src
         public Direction RotateLeft()
         {
             if (_direction == 'N')
-                return new Direction('W');
+                return Facing('W');
             if (_direction == 'E')
-                return new Direction('N');
+                return Facing('N');
             if (_direction == 'S')
-                return new Direction('E');
+                return Facing('E');
             if (_direction == 'W')
-                return new Direction('S');
+                return Facing('S');
 
-            return new Direction(char.MinValue);
+            return Facing(char.MinValue);
         }
 
         public Direction RotateRight()
         {
             if (_direction == 'N')
-                return new Direction('E');
+                return Facing('E');
             if (_direction == 'E')
-                return new Direction('S');
+                return Facing('S');
             if (_direction == 'S')
-                return new Direction('W');
+                return Facing('W');
             if (_direction == 'W')
-                return new Direction('N');
+                return Facing('N');
 
-            return new Direction(char.MinValue);
+            return Facing(char.MinValue);
         }
 
         public override string ToString()
