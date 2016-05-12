@@ -25,12 +25,12 @@ namespace MarsRoverKata.Src
         {
             public override Direction RotateLeft()
             {
-                return Facing('W');
+                return new West();
             }
 
             public override Direction RotateRight()
             {
-                return Facing('E');
+                return new East();
             }
 
             public override string ToString()
@@ -43,12 +43,12 @@ namespace MarsRoverKata.Src
         {
             public override Direction RotateLeft()
             {
-                return Facing('N');
+                return new North();
             }
 
             public override Direction RotateRight()
             {
-                return Facing('S');
+                return new South();
             }
 
             public override string ToString()
@@ -61,12 +61,12 @@ namespace MarsRoverKata.Src
         {
             public override Direction RotateLeft()
             {
-                return Facing('E');
+                return new East();
             }
 
             public override Direction RotateRight()
             {
-                return Facing('W');
+                return new West();
             }
 
             public override string ToString()
@@ -79,12 +79,12 @@ namespace MarsRoverKata.Src
         {
             public override Direction RotateLeft()
             {
-                return Facing('S');
+                return new South();
             }
 
             public override Direction RotateRight()
             {
-                return Facing('N');
+                return new North();
             }
 
             public override string ToString()
