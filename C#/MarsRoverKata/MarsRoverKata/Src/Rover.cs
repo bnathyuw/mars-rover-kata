@@ -4,7 +4,7 @@
     {
         private int _x = 0;
         private int _y = 0;
-        private Direction _direction = Direction.Facing('N');
+        private Direction _direction = Direction.Initial();
 
         public string Move(string instructions = null)
         {
