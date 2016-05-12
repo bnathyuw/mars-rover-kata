@@ -9,7 +9,7 @@
             _direction = direction;
         }
 
-        public char RotateLeft()
+        public char Rl()
         {
             if(_direction == 'N')
                 return 'W';
@@ -23,7 +23,7 @@
             return char.MinValue;
         }
 
-        public char RotateRight()
+        public char Rr()
         {
             if (_direction == 'N')
                 return 'E';
@@ -69,12 +69,12 @@
 
         private static Direction RotateLeft(Direction direction)
         {
-            return new Direction(direction.RotateLeft());
+            return new Direction(direction.Rl());
         }
 
         private static Direction RotateRight(Direction direction)
         {
-            return new Direction(direction.RotateRight());
+            return new Direction(direction.Rr());
         }
 
         private void MoveForward()
