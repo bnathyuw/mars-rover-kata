@@ -26,13 +26,13 @@
 
         private char RotateLeft(char direction)
         {
-            if(direction == 'N')
+            if(_direction == 'N')
                 return 'W';
-            if(direction == 'E')
+            if(_direction == 'E')
                 return 'N';
-            if(direction == 'S')
+            if(_direction == 'S')
                 return 'E';
-            if(direction == 'W')
+            if(_direction == 'W')
                 return 'S';
 
             return char.MinValue;
@@ -40,13 +40,13 @@
 
         private char RotateRight(char direction)
         {
-            if (direction == 'N')
+            if (_direction == 'N')
                 return 'E';
-            if (direction == 'E')
+            if (_direction == 'E')
                 return 'S';
-            if (direction == 'S')
+            if (_direction == 'S')
                 return 'W';
-            if (direction == 'W')
+            if (_direction == 'W')
                 return 'N';
 
             return char.MinValue;
